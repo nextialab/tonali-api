@@ -1,1 +1,2 @@
-GET		/		controllers.HomeController.home
+GET		/				controllers.HomeController.home
+GET		/user/:id		controllers.UserController.user(id: Long)

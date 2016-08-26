@@ -2,7 +2,7 @@
 
 CREATE TABLE app (
 	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(100) NOT NULL,
+	name TEXT NOT NULL,
 	version INT NOT NULL,
 	password CHAR(60) NOT NULL,
 	PRIMARY KEY (id)
@@ -20,10 +20,10 @@ CREATE TABLE token (
 	user INT NOT NULL,
 	token CHAR(36) NOT NULL,
 	expires TIMESTAMP NOT NULL,
-	context INT NOT NULL,
+	app INT NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY (user) REFERENCES user(id),
-	FOREIGN KEY (context) REFERENCES app(id)
+	FOREIGN KEY (app) REFERENCES app(id)
 );
 
 # web_password
