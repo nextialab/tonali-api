@@ -1,2 +1,4 @@
 GET		/				controllers.HomeController.home
 GET		/user/:id		controllers.UserController.user(id: Long)
+GET     /token/:userid  controllers.TokenController.token(userid: Long)
+POST    /token          controllers.TokenController.authorize

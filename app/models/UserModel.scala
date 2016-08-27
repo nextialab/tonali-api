@@ -29,4 +29,8 @@ object User {
 		dbConfig.db.run(users.filter(_.id === id).result.headOption)
     }
 
+    def getUserByEmail(email: String): Future[Option[User]] = {
+        dbConfig.db.run(users.filter(_.email === email).result.headOption)
+    }
+
 }

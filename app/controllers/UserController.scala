@@ -10,7 +10,7 @@ object UserController extends Controller {
 
 	implicit val writeUser = Json.writes[User]
 
-	def user(id: Long) = Action.async {
+    def user(id: Long) = Action.async {
 		User.getUser(id).map(res =>
 			res match {
 				case Some(user) => Ok(Json.toJson(user))
